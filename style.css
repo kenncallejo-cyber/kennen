@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800&family=Rajdhani:wght@400;500;600;700&display=swap');
+
+:root{
+    --bg:#05060d;
+    --panel:#0b0f1c;
+    --panel2:#0e1425;
+    --text:#e9edff;
+    --muted:#8d97b7;
+    --purple:#7c4dff;
+    --blue:#27a7ff;
+    --cyan:#65e7ff;
+    --line:rgba(111,138,255,.22);
+    --glow:0 0 28px rgba(102,82,255,.28);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+    background:
+      radial-gradient(circle at 80% 10%,rgba(83,46,180,.18),transparent 28%),
+      radial-gradient(circle at 10% 60%,rgba(0,151,255,.08),transparent 25%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Rajdhani',sans-serif;
+    font-size:18px;
+    overflow-x:hidden;
+}
+body:before{
+    content:"";position:fixed;inset:0;pointer-events:none;opacity:.16;
+    background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+    background-size:48px 48px;
+}
+a{color:inherit;text-decoration:none}
+.navbar{
+    position:fixed;top:0;left:0;right:0;z-index:20;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:18px 7%;background:rgba(5,6,13,.78);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line)
+}
+.brand{display:flex;align-items:center;gap:10px;font:700 16px 'Orbitron';letter-spacing:1px}
+.brand-mark{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--purple);color:var(--cyan);box-shadow:var(--glow)}
+.accent{color:var(--cyan)}
+nav{display:flex;gap:24px}
+nav a{font-weight:600;color:var(--muted);transition:.25s}
+nav a:hover{color:#fff;text-shadow:0 0 14px var(--cyan)}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:25px}
+.section{max-width:1180px;margin:auto;padding:110px 28px 70px}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:50px;padding-top:140px}
+.eyebrow{color:var(--cyan);font:600 13px 'Orbitron';letter-spacing:3px;margin-bottom:14px}
+h1,h2,h3{font-family:'Orbitron',sans-serif}
+h1{font-size:clamp(48px,8vw,92px);line-height:1;margin-bottom:20px}
+h1 span,h2 span{color:var(--cyan);text-shadow:0 0 22px rgba(101,231,255,.28)}
+.hero h2{font-size:clamp(18px,3vw,27px);color:#bfc8e8;line-height:1.4;margin-bottom:20px}
+.hero-text{max-width:650px;color:var(--muted);line-height:1.7}
+.hero-actions{display:flex;gap:14px;margin-top:30px}
+.btn{padding:13px 23px;border:1px solid var(--line);font-weight:700;letter-spacing:1px;transition:.25s}
+.btn.primary{background:linear-gradient(135deg,var(--purple),#3957ff);box-shadow:var(--glow)}
+.btn.ghost:hover,.btn.primary:hover{transform:translateY(-3px);box-shadow:0 0 30px rgba(79,103,255,.42)}
+.monarch-card{
+    position:relative;min-height:430px;border:1px solid var(--line);
+    background:linear-gradient(150deg,rgba(22,24,50,.88),rgba(7,10,19,.92));
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    box-shadow:inset 0 0 70px rgba(86,55,210,.08),var(--glow);
+    clip-path:polygon(8% 0,92% 0,100% 8%,100% 92%,92% 100%,8% 100%,0 92%,0 8%);
+}
+.rank{position:absolute;top:24px;left:25px;color:var(--muted);font:600 12px 'Orbitron'}
+.rank strong{color:#a77bff}
+.orb{width:220px;height:220px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle,rgba(124,77,255,.4),transparent 55%);filter:drop-shadow(0 0 30px rgba(91,55,255,.55))}
+.orb-core{width:88px;height:88px;border-radius:50%;background:#080b16;border:1px solid #735cff;box-shadow:0 0 35px #6144ff, inset 0 0 25px #3925a4}
+.status{font:700 14px 'Orbitron';letter-spacing:2px;color:#bfc8ff;margin-top:15px}
+.monarch-card small{margin-top:9px;color:var(--muted)}
+.section-heading{margin-bottom:38px}
+.section-heading h2{font-size:clamp(32px,5vw,54px)}
+.about-grid,.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.panel,.project-card,.contact-card{
+    background:linear-gradient(145deg,rgba(17,22,40,.9),rgba(8,11,21,.9));
+    border:1px solid var(--line);padding:30px;box-shadow:var(--glow)
+}
+.panel{min-height:250px}
+.panel-icon{color:var(--cyan);font-size:24px}
+.panel h3{font-size:18px;margin:18px 0 12px}
+.panel p,.project-card p,.contact-card p{color:var(--muted);line-height:1.65}
+.timeline{border-left:1px solid #44508a;margin-left:12px;padding-left:34px}
+.timeline-item{position:relative;padding:10px 0 45px}
+.timeline-dot{position:absolute;left:-41px;top:14px;width:13px;height:13px;background:var(--cyan);box-shadow:0 0 18px var(--cyan)}
+.date{font:600 11px 'Orbitron';color:var(--cyan);letter-spacing:2px}
+.timeline h3{margin:10px 0 5px;font-size:21px}
+.timeline p{color:#c2c9e4}.timeline small{display:block;color:var(--muted);margin-top:7px}
+.project-card{min-height:350px;position:relative;overflow:hidden}
+.project-card:after{content:"";position:absolute;inset:auto -50px -90px;height:160px;background:radial-gradient(circle,rgba(101,231,255,.15),transparent 60%)}
+.project-top{display:flex;justify-content:space-between;margin-bottom:55px}
+.project-number{font:700 30px 'Orbitron';color:#536083}
+.quest-status{font:700 10px 'Orbitron';color:#7bf1bd;border:1px solid rgba(123,241,189,.3);padding:6px 9px}
+.project-card h3{font-size:21px;margin-bottom:12px}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.tags span{font-size:12px;color:#b9c4e8;border:1px solid var(--line);padding:5px 8px}
+.project-link{color:var(--cyan);font-weight:700}
+.edit-note{color:#6f7895;font-size:14px;margin-top:20px}
+code{color:#b69bff}
+.skills-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.skill{display:grid;grid-template-columns:120px 1fr 45px;align-items:center;gap:15px}
+.skill>span{font-weight:700}.skill b{font:600 12px 'Orbitron';color:var(--cyan)}
+.bar{height:6px;background:#151b30}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--purple),var(--cyan));box-shadow:0 0 12px rgba(101,231,255,.35)}
+.contact-section{padding-bottom:110px}
+.contact-card{display:flex;justify-content:space-between;gap:30px;align-items:center}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px;justify-content:flex-end}
+.contact-links a{border:1px solid var(--line);padding:10px 14px;color:#bfc8e8}
+.contact-links a:hover{border-color:var(--cyan);color:#fff}
+footer{padding:25px;text-align:center;border-top:1px solid var(--line);color:#68718d;font-size:14px}
+footer span{color:var(--cyan)}
+.reveal{opacity:0;transform:translateY(22px);transition:.7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:800px){
+    .navbar{padding:15px 5%}.menu-toggle{display:block}nav{display:none;position:absolute;top:70px;left:0;right:0;background:#070a13;flex-direction:column;padding:22px 7%;border-bottom:1px solid var(--line)}nav.open{display:flex}
+    .hero{grid-template-columns:1fr;padding-top:130px}.monarch-card{min-height:330px}.about-grid,.project-grid{grid-template-columns:1fr}.skills-grid{grid-template-columns:1fr}.contact-card{flex-direction:column;align-items:flex-start}.contact-links{justify-content:flex-start}
+}
+
+.profile-container{
+    position:relative;
+    width:250px;
+    height:250px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.profile-image{
+    position:relative;
+    z-index:3;
+    width:195px;
+    height:195px;
+    object-fit:cover;
+    object-position:center 28%;
+    border-radius:50%;
+    border:3px solid #7c4dff;
+    box-shadow:
+        0 0 15px #7c4dff,
+        0 0 40px rgba(124,77,255,.75),
+        0 0 80px rgba(39,167,255,.35);
+}
+.profile-ring{
+    position:absolute;
+    width:230px;
+    height:230px;
+    border-radius:50%;
+    border:1px solid #65e7ff;
+    box-shadow:
+        0 0 20px #65e7ff,
+        inset 0 0 20px rgba(101,231,255,.3);
+    animation:rotateRing 8s linear infinite;
+}
+.profile-glow{
+    position:absolute;
+    width:205px;
+    height:205px;
+    border-radius:50%;
+    background:#6d3cff;
+    filter:blur(65px);
+    opacity:.4;
+    animation:pulseGlow 3s ease-in-out infinite;
+}
+@keyframes rotateRing{
+    from{transform:rotate(0deg)}
+    to{transform:rotate(360deg)}
+}
+@keyframes pulseGlow{
+    0%,100%{transform:scale(.9);opacity:.25}
+    50%{transform:scale(1.15);opacity:.5}
+}
